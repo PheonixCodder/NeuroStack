@@ -14,12 +14,12 @@ const Providers = ({ children }: Props) => {
     <QueryProvider>
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="light"
         enableSystem
         disableTransitionOnChange
       >
         {children}
-        <Toaster position="top-center" duration={3000} richColors />
+        <Toaster position="top-center" duration={3000} />
       </ThemeProvider>
     </QueryProvider>
   );

@@ -1,0 +1,15 @@
+import { createAuthClient } from "better-auth/react";
+import { polarClient } from "@polar-sh/better-auth/client";
+import { useAuthToken } from "@/hooks/use-auth-token";
+
+export const authClient = createAuthClient({
+  fetchOptions: {
+    auth: {
+      type: "Bearer",
+      token: () => useAuthToken.getState().bearerToken || "",
+    },
+  },
+  plugins: [
+    polarClient(),
+  ],
+});
